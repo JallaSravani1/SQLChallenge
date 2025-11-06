@@ -31,5 +31,3 @@ output:
 -The importance of ORDER BY for consistent query outputs
 
 #SQLWithIDC #21DaysSQLChallenge #DataAnalytics #LearningJourney #DPDzero #IndianDataClub
-
-Practical techniques to extract subsets of ordered data
