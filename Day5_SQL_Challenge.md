@@ -7,10 +7,11 @@ Round the average satisfaction to 2 decimal places.
 💻 SQL Query
 
 SELECT 
-    COUNT(*) AS total_patients_admitted,
-    SUM(CASE WHEN admission_status = 'refused' THEN 1 ELSE 0 END) AS total_patients_refused,
-    ROUND(AVG(satisfaction), 2) AS avg_satisfaction
-FROM patients;
+    SUM(patients_admitted) AS total_patients_admitted,
+    SUM(patients_refused) AS total_patients_refused,
+    ROUND(AVG(patient_satisfaction), 2) AS avg_satisfaction
+FROM services_weekly;
+
 
 ![WhatsApp Image 2025-11-07 at 22 05 00_6d94851d](https://github.com/user-attachments/assets/cae848ae-32ad-4b93-bf2a-a83ffcf4fa83)
 
