@@ -38,7 +38,22 @@ Analyze the event impact by comparing weeks with events vs weeks without events.
 
 Query:
 
+select case when lower(trim(event)) = 'none' or event is NULL THEN 'No Event'
+else 'With Event' end as event_count,
+count(distinct week) as week_count,
+round(avg(patient_satisfaction),2) as average_satisfaction,
+round(avg(staff_morale),2) as average_morale
+from services_weekly
+group  by
+case when lower(trim(event)) = 'none' or event is NULL THEN 'No Event'
+else 'With Event' end
+order by
+round(avg(patient_satisfaction),2) desc;
+
 Output:
+
+![WhatsApp Image 2025-11-15 at 17 03 13_030041a0](https://github.com/user-attachments/assets/a954a46c-b9d4-4e8c-b07f-5195875927e9)
+
 
 💡 Key Takeaways Today
 
